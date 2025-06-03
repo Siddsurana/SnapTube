@@ -1,0 +1,15 @@
+{
+  "name": "tubesnap-extension",
+  "version": "1.0.0",
+  "description": "TubeSnap PDF is a powerful Chrome extension that enhances your YouTube watching experience by allowing you to capture high-quality screenshots of video frames and compile them into a downloadable PDF document. Perfect for students, professionals, and anyone who needs to create visual notes from YouTube videos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.34.2"
+  }
+}

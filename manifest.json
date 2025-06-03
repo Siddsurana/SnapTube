@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "TubeSnap PDF",
+  "version": "1.0",
+  "description": "Capture YouTube video frames and compile them into a downloadable PDF with notes and timestamps",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "downloads",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*", "*://youtube.com/*"],
+      "js": ["scripts/jspdf.umd.min.js", "scripts/test.js", "scripts/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "scripts/jspdf.umd.min.js",
+        "styles/toolbar.css"
+      ],
+      "matches": ["*://*.youtube.com/*", "*://youtube.com/*"]
+    }
+  ]
+} 

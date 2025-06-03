@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TubeSnap PDF Settings</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        h2 {
+            margin: 0 0 15px 0;
+            color: #202124;
+            font-size: 18px;
+        }
+        
+        .setting-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #5f6368;
+            font-size: 14px;
+        }
+        
+        select, input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .checkbox-group label {
+            margin: 0 0 0 8px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 8px;
+            background: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+        
+        button:hover {
+            background: #1557b0;
+        }
+        
+        .status {
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            display: none;
+        }
+        
+        .status.success {
+            background: #e6f4ea;
+            color: #1e8e3e;
+            display: block;
+        }
+        
+        .status.error {
+            background: #fce8e6;
+            color: #d93025;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h2>TubeSnap PDF Settings</h2>
+    
+    <div class="setting-group">
+        <label for="imageQuality">Screenshot Quality</label>
+        <select id="imageQuality">
+            <option value="high">High (1080p)</option>
+            <option value="medium">Medium (720p)</option>
+            <option value="low">Low (480p)</option>
+        </select>
+    </div>
+    
+    <div class="setting-group">
+        <label for="maxScreenshots">Maximum Screenshots</label>
+        <input type="number" id="maxScreenshots" min="1" max="100" value="50">
+    </div>
+    
+    <div class="setting-group">
+        <div class="checkbox-group">
+            <input type="checkbox" id="autoTimestamp" checked>
+            <label for="autoTimestamp">Auto-add timestamps</label>
+        </div>
+        
+        <div class="checkbox-group">
+            <input type="checkbox" id="promptCaption" checked>
+            <label for="promptCaption">Prompt for captions</label>
+        </div>
+        
+        <div class="checkbox-group">
+            <input type="checkbox" id="darkMode">
+            <label for="darkMode">Dark mode UI</label>
+        </div>
+    </div>
+    
+    <button id="saveSettings">Save Settings</button>
+    <div id="status" class="status"></div>
+    
+    <script src="scripts/popup.js"></script>
+</body>
+</html> 
